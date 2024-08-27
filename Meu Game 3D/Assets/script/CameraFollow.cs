@@ -11,12 +11,13 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         alvo = GameObject.FindWithTag("Player").transform;
-        offset = alvo.position - Transform.position;
+        offset = alvo.position - transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position = alvo.position - offset;
+
     }
 }
