@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class Moeda : MonoBehaviour
@@ -9,8 +10,9 @@ public class Moeda : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.tag == "Player")
         {
+            FindObjectOfType<GameMenager>().SubtrairMoedas(Valor:1);
             Destroy(gameObject);
         }
     }
